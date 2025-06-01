@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Flock
   - Dog
+  - Baa
   layers:
   - Default
   - TransparentFX

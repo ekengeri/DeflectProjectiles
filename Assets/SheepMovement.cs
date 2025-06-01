@@ -12,6 +12,8 @@ public class SheepMovement : MonoBehaviour
     public Collider2D flockCollider;
     public Collider2D dogCollider;
 
+    public AudioSource audio;
+
     public float sheepSpeed = 3.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,6 +26,9 @@ public class SheepMovement : MonoBehaviour
 
         flockCollider = flock.GetComponent<Collider2D>();
         dogCollider = dog.GetComponent<Collider2D>();
+
+        audio = flock.GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -46,6 +51,7 @@ public class SheepMovement : MonoBehaviour
         {
             hasBeenBlocked = true;
             transform.Rotate(new Vector3(0, 0, 1), 180);
+            audio.Play();
         }
 
         if (hasBeenBlocked && collision.collider == flockCollider)
